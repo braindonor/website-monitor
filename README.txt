@@ -13,6 +13,13 @@ The log file website-monitor.log is written to the directory of execution.
 
 The executable has been tested on MacOS Catalina on Java(TM) SE Runtime Environment 18.3 (build 10.0.2+13)
 
+Building
+========
+
+The project can be built in IntelliJ IDEA Community Edition 2021.1.2.
+
+Execute the Gradle jar task to create build/libs/website-monitor-1.0-SNAPSHOT.jar.
+
 Installation
 ============
 
