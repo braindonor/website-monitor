@@ -9,7 +9,7 @@ class WebsiteMonitor {
         @JvmStatic
         fun main(args: Array<String>) = runBlocking {
             val logger = Logger()
-            val delayPeriod = ConfigurationUtil().getCheckPeriodSeconds()
+            val delayPeriod = ConfigurationUtil().getCheckPeriodSecondsInMillis()
             var responseData: WebRequest.ResponseData
 
             logger.log("WebsiteMonitor started")

@@ -13,7 +13,7 @@ class ConfigurationUtil {
         return fileObject.readText()
     }
 
-    fun getCheckPeriodSeconds(filePath: String = CONFIGURATION_FILE_PATH): Long {
+    fun getCheckPeriodSecondsInMillis(filePath: String = CONFIGURATION_FILE_PATH): Long {
         val json = readJsonConfigurationFile(filePath)
         val `object` = JSONTokener(json).nextValue() as JSONObject
         return `object`.getLong("checkPeriodSeconds") * 1000

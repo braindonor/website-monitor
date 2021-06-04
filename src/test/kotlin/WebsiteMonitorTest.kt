@@ -26,7 +26,7 @@ class WebsiteMonitorTest {
 
     @Test
     fun testGetCheckPeriodSeconds() {
-        assert(ConfigurationUtil().getCheckPeriodSeconds(TEST_CONFIGURATION_FILE_PATH) > 0)
+        assert(ConfigurationUtil().getCheckPeriodSecondsInMillis(TEST_CONFIGURATION_FILE_PATH) > 0)
     }
 
     @Test
