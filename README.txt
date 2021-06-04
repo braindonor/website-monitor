@@ -75,7 +75,7 @@ Possible Future Enhancements
 
     * Improve the handling of exceptions when a web request fails with an underlying exception.
 
-    * Use a mocking framework to provide better unit test coverage for the web response scenarios.
+    * Use a mocking framework to provide better unit test coverage for the web response scenarios and WebsiteMonitor class.
 
 
 
