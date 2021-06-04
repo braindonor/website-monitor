@@ -18,9 +18,12 @@
     Building
     ========
 
+    All source code is in the src/main/kotlin directory
+    All test code is in the src/test/kotlin directory
+
     The project can be built in IntelliJ IDEA Community Edition 2021.1.2.
 
-    Execute the Gradle jar task to create build/libs/website-monitor-1.0-SNAPSHOT.jar.
+    Execute the Gradle jar task to create an executable jar (build/libs/website-monitor-1.0-SNAPSHOT.jar).
 
     Dependencies are listed in the build.gradle.kts file.
 
