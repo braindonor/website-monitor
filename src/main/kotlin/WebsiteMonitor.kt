@@ -20,7 +20,6 @@ class WebsiteMonitor {
 
             val job = launch {
                 while ( true ) {
-                    delay(delayPeriod)
                     for (website in ConfigurationUtil().getWebsites()) {
                         try {
                             responseData = WebRequest().getResponse(website.url)
@@ -31,6 +30,7 @@ class WebsiteMonitor {
                                     "connection exception: ${exception.message}")
                         }
                     }
+                    delay(delayPeriod)
                 }
             }
         }
