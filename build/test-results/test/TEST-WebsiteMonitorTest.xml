@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="WebsiteMonitorTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2021-06-03T22:45:51" hostname="C02VR19DHTD8" time="0.895">
+  <properties/>
+  <testcase name="testGetWebResponseReturnsSomeText()" classname="WebsiteMonitorTest" time="0.505"/>
+  <testcase name="testValidateResponseMatchesRegex()" classname="WebsiteMonitorTest" time="0.161"/>
+  <testcase name="testGetListOfWebsites()" classname="WebsiteMonitorTest" time="0.028"/>
+  <testcase name="testGetCheckPeriodSeconds()" classname="WebsiteMonitorTest" time="0.002"/>
+  <testcase name="testValidateResponseDoesNotMatchRegex()" classname="WebsiteMonitorTest" time="0.095"/>
+  <testcase name="testReadJsonConfigurationFromFile$website_monitor()" classname="WebsiteMonitorTest" time="0.002"/>
+  <testcase name="testValidateSuccessStatusCode()" classname="WebsiteMonitorTest" time="0.097"/>
+  <system-out><![CDATA[Thu Jun 03 23:45:52 BST 2021 : SUCCESS: https://www.google.com matches regex '<title>Google</title>'
+Thu Jun 03 23:45:52 BST 2021 : ERROR: https://www.google.com does not match regex '<title>Googly</title>'
+Thu Jun 03 23:45:52 BST 2021 : SUCCESS: https://www.google.com request time: 94 ms
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

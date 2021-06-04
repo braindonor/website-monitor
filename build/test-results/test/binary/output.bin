@@ -1,0 +1,3 @@
+eThu Jun 03 23:45:52 BST 2021 : SUCCESS: https://www.google.com matches regex '<title>Google</title>'
+jThu Jun 03 23:45:52 BST 2021 : ERROR: https://www.google.com does not match regex '<title>Googly</title>'
+SThu Jun 03 23:45:52 BST 2021 : SUCCESS: https://www.google.com request time: 94 ms

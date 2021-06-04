@@ -1,0 +1,21 @@
+{
+  "checkPeriodSeconds": 10,
+  "websites": [
+    {
+      "url": "https://www.google.com",
+      "content": "<title>Google</title>"
+    },
+    {
+      "url": "https://duckduckgo.com/",
+      "content": "About DuckDuckGo"
+    },
+    {
+      "url": "https://www.yahoo.com",
+      "content": "Yahoo Not Home"
+    },
+    {
+      "url": "https://www.dfdffggffg.com",
+      "content": ""
+    }
+  ]
+}
