@@ -7,7 +7,10 @@
     The project is coded in Kotlin and built in IntelliJ IDEA Community Edition 2021.1.2.
 
     The executable jar is in build/libs/website-monitor-1.0-SNAPSHOT.jar
-    The example configuration json file is website-monitor-config.json and should exist in the directory of execution.
+
+    The example configuration json file is website-monitor-config.json and should exist in the directory of
+    execution.
+
     The log file website-monitor.log is written to the directory of execution.
 
     The executable has been tested on MacOS Catalina on Java(TM) SE Runtime Environment 18.3 (build 10.0.2+13)
@@ -24,10 +27,12 @@
     Installation
     ============
 
-    Copy the jar (build/libs/website-monitor-1.0-SNAPSHOT.jar) file and the configuration file (website-monitor-config.json)
-    to the directory where you would like to execute it.
+    Copy the jar (build/libs/website-monitor-1.0-SNAPSHOT.jar) file and the configuration file
+    (website-monitor-config.json) to the directory where you would like to execute it.
 
-    Edit the website-monitor-config.json to configure the urls you wish to monitor and the response content (regEx) to verify.
+    Edit the website-monitor-config.json to configure the urls you wish to monitor and
+    the response content (regEx) to verify.
+
     The checking interval in seconds can be customised by changing the property checkPeriodSeconds.
 
     website-monitor-config.json
@@ -82,17 +87,20 @@
     Possible Future Enhancements
     ============================
 
-    * Implement a logging framework to make logging customisable, allow log file rollover, and improve logging resource usage.
+    * Implement a logging framework to make logging customisable, allow log file rollover, and improve
+      logging resource usage.  Include unit tests for logging
 
     * Explore the use of coroutines to allow parallel processing of web response checks.
 
     * Check for json responses and provide more robust validation of content.
 
-    * Allow the dynamic loading of the configuration file, so that the process does not need to be restarted.
+    * Allow the dynamic loading of the configuration file, so that the process does not
+      need to be restarted.
 
     * Improve the handling of exceptions when a web request fails with an underlying exception.
 
-    * Use a mocking framework to provide better unit test coverage for the web response scenarios and WebsiteMonitor class.
+    * Use a mocking framework to provide better unit test coverage for the web response scenarios
+      and WebsiteMonitor class.
 
     License
     =======
