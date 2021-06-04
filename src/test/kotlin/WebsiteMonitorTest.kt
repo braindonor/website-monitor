@@ -10,9 +10,15 @@ class WebsiteMonitorTest {
     }
 
     @Test
-    internal fun testReadJsonConfigurationFromFile() {
+    fun testReadJsonConfigurationFromFile() {
         val json = ConfigurationUtil().readJsonConfigurationFile(TEST_CONFIGURATION_FILE_PATH)
         assert(json.isNotEmpty())
+    }
+
+    @Test
+    fun testFailureToReadJsonConfigurationFromFile() {
+        val json = ConfigurationUtil().readJsonConfigurationFile("file_not_exist.json")
+        assert(json.isEmpty())
     }
 
     @Test

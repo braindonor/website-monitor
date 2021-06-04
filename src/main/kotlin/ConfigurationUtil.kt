@@ -1,16 +1,22 @@
 import org.json.JSONObject
 import org.json.JSONTokener
 import java.io.File
+import java.io.FileNotFoundException
 
-class ConfigurationUtil {
+class ConfigurationUtil() {
 
-    private companion object {
+    companion object {
         const val CONFIGURATION_FILE_PATH = "website-monitor-config.json"
     }
 
     fun readJsonConfigurationFile(filePath: String): String {
-        val fileObject = File(filePath)
-        return fileObject.readText()
+        return try {
+            val fileObject = File(filePath)
+            fileObject.readText()
+        } catch (exception: FileNotFoundException) {
+            Logger().log("ERROR: Configuration file '${filePath}' does not exist")
+            String()
+        }
     }
 
     fun getCheckPeriodSecondsInMillis(filePath: String = CONFIGURATION_FILE_PATH): Long {

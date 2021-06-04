@@ -1,5 +1,5 @@
 {
-  "checkPeriodSeconds": 10,
+  "checkPeriodSeconds": 30,
   "websites": [
     {
       "url": "https://www.google.com",
@@ -12,10 +12,6 @@
     {
       "url": "https://www.yahoo.com",
       "content": "Yahoo Not Home"
-    },
-    {
-      "url": "https://www.Dyson.com",
-      "content": ""
     }
   ]
 }
