@@ -1,4 +1,3 @@
-
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
@@ -14,20 +13,22 @@ class WebsiteMonitor {
 
             logger.log("WebsiteMonitor started")
 
-            if(args.isNotEmpty()) {
+            if (args.isNotEmpty()) {
                 logger.log("command line argument: ${args[0]}")
             }
 
             val job = launch {
-                while ( true ) {
+                while (true) {
                     for (website in ConfigurationUtil().getWebsites()) {
                         try {
                             responseData = WebRequest().getResponse(website.url)
                             WebRequest().validateStatusCode(responseData)
                             WebRequest().validateResponseText(responseData.response, website.content)
                         } catch (exception: Exception) {
-                            Logger().log("ERROR: ${website.url} " +
-                                    "connection exception: ${exception.message}")
+                            Logger().log(
+                                "ERROR: ${website.url} " +
+                                        "connection exception: ${exception.message}"
+                            )
                         }
                     }
                     delay(delayPeriod)
