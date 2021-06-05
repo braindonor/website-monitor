@@ -1,6 +1,5 @@
 website-monitor.log
 /.gradle/
-/.idea/
 /build/classes/
 /build/kotlin/
 /build/reports/
