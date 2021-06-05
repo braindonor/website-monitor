@@ -93,8 +93,6 @@
     * Implement a logging framework to make logging customisable, allow log file rollover, and improve
       logging resource usage.  Include unit tests for logging
 
-    * Explore the use of coroutines to allow parallel processing of web response checks.
-
     * Check for json responses and provide more robust validation of content.
 
     * Allow the dynamic loading of the configuration file, so that the process does not

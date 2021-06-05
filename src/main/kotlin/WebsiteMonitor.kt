@@ -10,39 +10,45 @@ class WebsiteMonitor {
         @JvmStatic
         fun main(args: Array<String>) = runBlocking {
 
-            val filePath: String = if (args.isNotEmpty()) {
-                args[0]
-            } else {
-                ConfigurationUtil.CONFIGURATION_FILE_PATH
-            }
+            val filePath = getFilePath(args)
 
             if (ConfigurationUtil().readJsonConfigurationFile(filePath).isNotEmpty()) {
-                logger.log("INFO: WebsiteMonitor started: executing with json configuration file: '${filePath}'")
+                logger.log(
+                    "INFO: WebsiteMonitor started: executing with json configuration file: '${filePath}'"
+                )
 
                 val delayPeriod = ConfigurationUtil().getCheckPeriodSecondsInMillis(filePath)
 
-                val job = launch {
-                    while (true) {
-                        monitorWebsites(filePath)
-                        delay(delayPeriod)
+                while (true) {
+                    for (website in ConfigurationUtil().getWebsites(filePath)) {
+                        launch { monitorWebsite(website.url, website.content) }
                     }
+                    delay(delayPeriod)
                 }
             }
         }
 
-        private fun monitorWebsites(filePath: String) {
-            var responseData: WebRequest.ResponseData
+        private fun monitorWebsite(website: String, content: String) {
 
-            for (website in ConfigurationUtil().getWebsites(filePath)) {
-                try {
-                    responseData = WebRequest().getResponse(website.url)
-                    WebRequest().validateStatusCode(responseData)
-                    WebRequest().validateResponseText(responseData.response, website.content)
-                } catch (exception: Exception) {
-                    Logger().log(
-                        "ERROR: ${website.url} connection exception: ${exception.message}"
-                    )
-                }
+            val responseData: WebRequest.ResponseData
+
+            try {
+                responseData = WebRequest().getResponse(website)
+                WebRequest().validateStatusCode(responseData)
+                WebRequest().validateResponseText(responseData.response, content)
+            } catch (exception: Exception) {
+                Logger().log(
+                    "ERROR: $website connection exception: ${exception.message}"
+                )
+            }
+        }
+
+        private fun getFilePath(args: Array<String>): String {
+
+            return if (args.isNotEmpty()) {
+                args[0]
+            } else {
+                ConfigurationUtil.CONFIGURATION_FILE_PATH
             }
         }
     }
